@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "repensedb"
+version = "1.1.14"
+description = "Repense functions to handle database manipulation"
+authors = ["Samuel Alessandro Baptista <samuel.baptista@repense.ai>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+boto3 = "^1.35.14"
+mysql-connector-python = "^9.0.0"
+pandas = "^2.2.2"
+pytest = "^8.3.3"
+setuptools = "^75.2.0"
+firebase-admin = "^6.5.0"
+redis = "^5.2.0"
+psycopg2-binary = "^2.9.10"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.1.1"
+black = "^24.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "error",
+    "always::DeprecationWarning",
+    "always::UserWarning",
+    "always::RuntimeWarning",
+    "ignore::DeprecationWarning:distutils.*",
+    "ignore::DeprecationWarning:pkg_resources.*",
+]
+addopts = """
+    -vv
+    --no-header
+    -W error::DeprecationWarning
+    --show-capture=all
+    --tb=short
+"""
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
