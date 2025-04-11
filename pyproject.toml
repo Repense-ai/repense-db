@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "repensedb"
-version = "1.1.14"
-description = "Repense functions to handle database manipulation"
+version = "1.1.15"
+description = "A powerful and flexible database manipulation library that provides a unified interface for multiple database systems."
 authors = ["Samuel Alessandro Baptista <samuel.baptista@repense.ai>"]
 readme = "README.md"
 
